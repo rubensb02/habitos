@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#121212"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/add_habito"
+        android:layout_width="170dp"
+        android:layout_height="80dp"
+        android:layout_marginBottom="70dp"
+        android:backgroundTint="#3f3f3f"
+        android:text="Añadir"
+        android:textColor="#FF03DAC5"
+        app:icon="@android:drawable/ic_input_add"
+        app:iconTint="#FF03DAC5"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/recyclerViewHabitos" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewHabitos"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="9dp"
+        android:layout_marginTop="54dp"
+        android:layout_marginEnd="9dp"
+        android:layout_marginBottom="55dp"
+        android:background="#282828"
+        app:layout_constraintBottom_toTopOf="@+id/add_habito"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:listitem="@layout/list" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

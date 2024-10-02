@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#121212"
+    tools:context=".AddHabito">
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:gravity="center_horizontal"
+        android:background="#121212">
+
+        <!-- Campo Nombre -->
+        <TextView
+            android:id="@+id/tvNombre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nombre"
+            android:textSize="18sp"
+            android:textColor="#FF03DAC5"
+            android:paddingBottom="8dp" />
+
+        <EditText
+            android:id="@+id/etNombre"
+            android:backgroundTint="#575757"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:drawable/editbox_background_normal"
+            android:hint="Ingresa el nombre"
+            android:inputType="textPersonName"
+            android:minHeight="48dp"
+            android:padding="8dp"
+            android:textColor="#FFFFFF" />
+
+        <!-- Espacio -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="16dp" />
+
+        <!-- Campo Descripción -->
+        <TextView
+            android:id="@+id/tvDescripcion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Descripción"
+            android:textSize="18sp"
+            android:textColor="#FF03DAC5"
+            android:paddingBottom="8dp" />
+
+        <EditText
+            android:id="@+id/etDescripcion"
+            android:backgroundTint="#575757"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Ingresa una descripción"
+            android:textColor="#FFFFFF"
+            android:inputType="textMultiLine"
+            android:minLines="3"
+            android:padding="8dp"
+            android:background="@android:drawable/editbox_background_normal" />
+
+        <!-- Espacio -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="16dp" />
+
+        <!-- Campo Precio -->
+        <TextView
+            android:id="@+id/tvPrecio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Precio"
+            android:textSize="18sp"
+            android:textColor="#FF03DAC5"
+            android:paddingBottom="8dp" />
+
+        <EditText
+            android:id="@+id/etPrecio"
+            android:backgroundTint="#575757"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:drawable/editbox_background_normal"
+            android:hint="Ingresa el precio"
+            android:inputType="textMultiLine"
+            android:minHeight="48dp"
+            android:padding="8dp"
+            android:textColor="#FFFFFF" />
+
+        <!-- Espacio -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="16dp" />
+
+        <!-- Botón para enviar -->
+        <Button
+            android:id="@+id/buttonSave"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Enviar"
+            android:textColor="#FF03DAC5"
+            android:backgroundTint="#3f3f3f"
+            android:layout_gravity="center" />
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
