@@ -9,7 +9,7 @@
     tools:context=".MainActivity">
 
     <Button
-        android:id="@+id/add_habito"
+        android:id="@+id/addHabito"
         android:layout_width="170dp"
         android:layout_height="80dp"
         android:layout_marginBottom="70dp"
@@ -33,7 +33,7 @@
         android:layout_marginEnd="9dp"
         android:layout_marginBottom="55dp"
         android:background="#282828"
-        app:layout_constraintBottom_toTopOf="@+id/add_habito"
+        app:layout_constraintBottom_toTopOf="@+id/addHabito"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"

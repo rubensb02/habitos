@@ -15,10 +15,11 @@ import com.ruben.habitosversion1.room.HabitosDao;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class ListaAdapter extends RecyclerView.Adapter<ListaAdapter.ListaViewHolder> {
 
-    private ArrayList<Lista> listaList;
+    private List<Lista> listaList;
     private HabitosDao habitosDao;
     Context context;
 
@@ -57,7 +58,7 @@ public class ListaAdapter extends RecyclerView.Adapter<ListaAdapter.ListaViewHol
         Lista lista = listaList.get(position);
         listaList.remove(position); // Eliminar el ítem de la lista
         notifyItemRemoved(position); // Notificar al adaptador que un ítem ha sido eliminado
-        Toast.makeText(context, "Digimon elimiado", Toast.LENGTH_SHORT).show();
+        Toast.makeText(context, "Habito elimiado", Toast.LENGTH_SHORT).show();
 
         // Eliminar el ítem de la base de datos
         new Thread(new Runnable() {

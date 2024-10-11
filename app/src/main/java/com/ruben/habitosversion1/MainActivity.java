@@ -42,10 +42,10 @@ public class MainActivity extends AppCompatActivity {
 
         loadHabitos();
 
-        //ItemTouchHelper itemTouchHelper = new ItemTouchHelper(new SwipeToDeleteCallback(ListaAdapter));
-        //itemTouchHelper.attachToRecyclerView(recyclerView);
+        ItemTouchHelper itemTouchHelper = new ItemTouchHelper(new SwipeToDeleteCallback(listaAdapter));
+        itemTouchHelper.attachToRecyclerView(recyclerView);
 
-        add_habito = findViewById(R.id.add_habito);
+        add_habito = findViewById(R.id.addHabito);
         add_habito.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

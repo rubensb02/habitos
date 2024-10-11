@@ -63,7 +63,7 @@ public class AddHabito  extends AppCompatActivity {
         // Insertar habito en la base de datos usando Room
         DatabaseClient.getInstance(getApplicationContext()).getHabitosDatabase().habitosDao().insert(habito);
         // Mostrar mensaje de éxito
-        //Toast.makeText(this, "habito añadido", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "habito añadido", Toast.LENGTH_SHORT).show();
 
         // Finalizar la actividad y volver a la actividad principal
         startActivity(new Intent(this, MainActivity.class));
