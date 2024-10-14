@@ -20,9 +20,26 @@
         app:iconTint="#FF03DAC5"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.933"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/recyclerViewHabitos" />
+
+    <Button
+        android:id="@+id/create_notification_button"
+        android:layout_width="170dp"
+        android:layout_height="80dp"
+        android:layout_marginBottom="70dp"
+        android:backgroundTint="#3f3f3f"
+        android:text="Crear notificación"
+        android:textColor="#FF03DAC5"
+        app:icon="@android:drawable/ic_input_add"
+        app:iconTint="#FF03DAC5"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.037"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/recyclerViewHabitos"
+        app:layout_constraintVertical_bias="1.0" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewHabitos"
