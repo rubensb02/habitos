@@ -113,8 +113,8 @@ public class MainActivity extends AppCompatActivity {
         // Establece la hora actual
         calendar.setTimeInMillis(System.currentTimeMillis());
         // Configura la hora de la notificación (9:00:00 en este ejemplo)
-        calendar.set(Calendar.HOUR_OF_DAY, 9);
-        calendar.set(Calendar.MINUTE, 0);
+        calendar.set(Calendar.HOUR_OF_DAY, 12);
+        calendar.set(Calendar.MINUTE, 40);
         calendar.set(Calendar.SECOND, 0);
 
         // Si la hora configurada ya pasó, programa para el siguiente día
