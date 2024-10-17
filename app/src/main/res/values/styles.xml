@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Tema personalizado para TimePicker -->
+    <style name="CustomTimePickerTheme" parent="Theme.AppCompat.Light.Dialog">
+        <!-- Cambiar el color del texto principal (los números del TimePicker) -->
+        <item name="android:textColorPrimary">#FF03DAC5</item> <!-- Rojo -->
+
+        <!-- Cambiar el color de fondo del TimePicker -->
+        <item name="android:colorBackground">#F0F0F0</item> <!-- Gris claro -->
+
+    </style>
+</resources>

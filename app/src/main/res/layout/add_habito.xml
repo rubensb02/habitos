@@ -18,6 +18,7 @@
         android:weightSum="1">
 
         <!-- Título de la pantalla -->
+
         <TextView
             android:id="@+id/tvTitle"
             android:layout_width="wrap_content"
@@ -67,16 +68,16 @@
 
         <EditText
             android:id="@+id/etDescripcion"
-            android:backgroundTint="#575757"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="0.4"
+            android:layout_weight="0.2"
+            android:background="@android:drawable/editbox_background_normal"
+            android:backgroundTint="#575757"
             android:hint="Ingresa una descripción"
-            android:textColor="#FFFFFF"
             android:inputType="textMultiLine"
             android:minLines="5"
             android:padding="12dp"
-            android:background="@android:drawable/editbox_background_normal" />
+            android:textColor="#FFFFFF" />
 
         <!-- Espacio -->
         <View
@@ -110,17 +111,43 @@
             android:layout_width="match_parent"
             android:layout_height="16dp" />
 
-        <!-- Botón para enviar -->
+        <TimePicker
+            android:id="@+id/timePicker"
+            android:layout_width="378dp"
+            android:layout_height="88dp"
+            android:theme="@style/CustomTimePickerTheme"
+            android:textColorPrimary="#FF03DAC5"
+            android:timePickerMode="spinner" />
+
+        <!-- Espacio -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="16dp" />
+
+
+        <Button
+            android:id="@+id/create_notification_button"
+            android:layout_width="312dp"
+            android:layout_height="25dp"
+            android:layout_gravity="center"
+            android:layout_weight="0.1"
+            android:backgroundTint="#3f3f3f"
+            android:padding="16dp"
+            android:text="Crear notificación"
+            android:textColor="#FF03DAC5"
+            app:icon="@android:drawable/ic_input_add"
+            app:iconTint="#FF03DAC5" />
+
         <Button
             android:id="@+id/buttonSave"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="0.1"
-            android:text="Enviar"
-            android:textColor="#FF03DAC5"
-            android:backgroundTint="#3f3f3f"
+            android:layout_width="312dp"
+            android:layout_height="25dp"
             android:layout_gravity="center"
-            android:padding="16dp" />
+            android:layout_weight="0.1"
+            android:backgroundTint="#3f3f3f"
+            android:padding="16dp"
+            android:text="Enviar"
+            android:textColor="#FF03DAC5" />
 
     </LinearLayout>
 

@@ -15,15 +15,27 @@ public class NotificationReceiver extends BroadcastReceiver {
 
     @Override
     public void onReceive(Context context, Intent intent) {
+
+        //llegada de datos ->
+        String editTextName = intent.getStringExtra("editTextName");
+        String editTextType = intent.getStringExtra("editTextType");
+        String editTextLevel = intent.getStringExtra("editTextLevel");
+
         Log.d(TAG, "onReceive ejecutado"); // Asegúrate de que este log se muestra en el Logcat
         // Construye la notificación
         NotificationCompat.Builder builder = new NotificationCompat.Builder(context,
                 "daily_reminder_channel")
                 .setSmallIcon(R.drawable.notification_icon) // Icono de la notificación
                 .setContentTitle("Recordatorio Diario") // Título de la notificación
-                .setContentText("¡Hora de tu recordatorio diario!") // Texto de la notificación
                 .setPriority(NotificationCompat.PRIORITY_DEFAULT) // Prioridad de la notificación
                 .setAutoCancel(true); // La notificación se cancela al tocarla
+
+        NotificationCompat.InboxStyle inboxStyle = new NotificationCompat.InboxStyle()
+                .addLine("Nombre: " + editTextName)  // Primera línea
+                .addLine("Descripción: " + editTextType) // Segunda línea
+                .addLine("Precio: " + editTextLevel);  // Tercera línea
+
+        builder.setStyle(inboxStyle);
 
         // Muestra la notificación
         NotificationManagerCompat notificationManager = NotificationManagerCompat.from(context);

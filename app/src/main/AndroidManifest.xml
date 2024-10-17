@@ -16,6 +16,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.HabitosVersion1"
         tools:targetApi="31">
+
+
         <activity
             android:name=".AddHabito"
             android:exported="false" />
@@ -27,7 +29,8 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
+        </activity> <!-- Declaración del receptor de notificaciones -->
+        <receiver android:name=".NotificationReceiver" />
     </application>
 
 </manifest>
