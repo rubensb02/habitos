@@ -67,20 +67,20 @@ public class AddHabito  extends AppCompatActivity {
         });
 
         // Inicializa el botón y establece su listener de clic
-        createNotificationButton = findViewById(R.id.create_notification_button);
-        createNotificationButton.setOnClickListener(v -> {
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) { // Android 13 y superior
-                if (ContextCompat.checkSelfPermission(this, "android.permission.POST_NOTIFICATIONS") != PackageManager.PERMISSION_GRANTED) {
-                    ActivityCompat.requestPermissions(this, new String[]{"android.permission.POST_NOTIFICATIONS"}, REQUEST_CODE);
-                } else {
-                    createNotificationChannel(); // Crea el canal de notificaciones
-                    scheduleDailyNotification(); // Programa una notificación diaria
-                }
-            } else {
-                createNotificationChannel(); // Crea el canal de notificaciones
-                scheduleDailyNotification(); // Programa una notificación diaria
-            }
-        });
+//        createNotificationButton = findViewById(R.id.create_notification_button);
+//        createNotificationButton.setOnClickListener(v -> {
+//            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) { // Android 13 y superior
+//                if (ContextCompat.checkSelfPermission(this, "android.permission.POST_NOTIFICATIONS") != PackageManager.PERMISSION_GRANTED) {
+//                    ActivityCompat.requestPermissions(this, new String[]{"android.permission.POST_NOTIFICATIONS"}, REQUEST_CODE);
+//                } else {
+//                    createNotificationChannel(); // Crea el canal de notificaciones
+//                    scheduleDailyNotification(); // Programa una notificación diaria
+//                }
+//            } else {
+//                createNotificationChannel(); // Crea el canal de notificaciones
+//                scheduleDailyNotification(); // Programa una notificación diaria
+//            }
+//        });
 
     }
 
@@ -180,6 +180,19 @@ public class AddHabito  extends AppCompatActivity {
         DatabaseClient.getInstance(getApplicationContext()).getHabitosDatabase().habitosDao().insert(habito);
         // Mostrar mensaje de éxito
         Toast.makeText(this, "habito añadido", Toast.LENGTH_SHORT).show();
+
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            if (ContextCompat.checkSelfPermission(this, "android.permission.POST_NOTIFICATIONS") != PackageManager.PERMISSION_GRANTED) {
+                ActivityCompat.requestPermissions(this, new String[]{"android.permission.POST_NOTIFICATIONS"}, REQUEST_CODE);
+            } else {
+                createNotificationChannel();
+                scheduleDailyNotification();
+            }
+        } else {
+            createNotificationChannel();
+            scheduleDailyNotification();
+        }
 
         // Finalizar la actividad y volver a la actividad principal
         startActivity(new Intent(this, MainActivity.class));

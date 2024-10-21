@@ -30,7 +30,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity> <!-- Declaración del receptor de notificaciones -->
-        <receiver android:name=".NotificationReceiver" />
+        <receiver android:name=".NotificationReceiver"
+            android:exported="true"/>
     </application>
 
 </manifest>

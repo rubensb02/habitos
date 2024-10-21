@@ -125,18 +125,18 @@
             android:layout_height="16dp" />
 
 
-        <Button
-            android:id="@+id/create_notification_button"
-            android:layout_width="312dp"
-            android:layout_height="25dp"
-            android:layout_gravity="center"
-            android:layout_weight="0.1"
-            android:backgroundTint="#3f3f3f"
-            android:padding="16dp"
-            android:text="Crear notificación"
-            android:textColor="#FF03DAC5"
-            app:icon="@android:drawable/ic_input_add"
-            app:iconTint="#FF03DAC5" />
+<!--        <Button-->
+<!--            android:id="@+id/create_notification_button"-->
+<!--            android:layout_width="312dp"-->
+<!--            android:layout_height="25dp"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:layout_weight="0.1"-->
+<!--            android:backgroundTint="#3f3f3f"-->
+<!--            android:padding="16dp"-->
+<!--            android:text="Crear notificación"-->
+<!--            android:textColor="#FF03DAC5"-->
+<!--            app:icon="@android:drawable/ic_input_add"-->
+<!--            app:iconTint="#FF03DAC5" />-->
 
         <Button
             android:id="@+id/buttonSave"
