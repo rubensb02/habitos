@@ -3,6 +3,7 @@ import androidx.room.Dao;
 import androidx.room.Delete;
 import androidx.room.Insert;
 import androidx.room.Query;
+import androidx.room.Update;
 
 import com.ruben.habitosversion1.Lista;
 
@@ -17,8 +18,14 @@ public interface HabitosDao {
     @Delete
     void delete(Lista lista);
 
+    @Update
+    void update(Lista lista);
+
     @Query("SELECT * FROM Lista")
     List<Lista> getAllLista();
+
+    @Query("SELECT * FROM Lista WHERE id = :itemId")
+    Lista getItemById(int itemId);
 
 
 }

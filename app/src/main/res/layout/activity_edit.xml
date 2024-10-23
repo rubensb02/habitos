@@ -1,0 +1,132 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#121212"
+    tools:context=".EditActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:gravity="center_horizontal"
+        android:background="#121212"
+        android:layout_gravity="center"
+        android:weightSum="1">
+
+        <!-- Título de la pantalla -->
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Editar Hábito"
+            android:textColor="#FF03DAC5"
+            android:textSize="24sp"
+            android:gravity="center"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Campo Nombre -->
+        <TextView
+            android:id="@+id/tvNombre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nombre"
+            android:textSize="18sp"
+            android:textColor="#FF03DAC5"
+            android:paddingBottom="8dp" />
+
+        <EditText
+            android:id="@+id/etNombre"
+            android:backgroundTint="#575757"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.2"
+            android:background="@android:drawable/editbox_background_normal"
+            android:hint="Ingresa el nombre"
+            android:inputType="textPersonName"
+            android:padding="12dp"
+            android:textColor="#FFFFFF" />
+
+        <!-- Espacio -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="16dp" />
+
+        <!-- Campo Descripción -->
+        <TextView
+            android:id="@+id/tvDescripcion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Descripción"
+            android:textSize="18sp"
+            android:textColor="#FF03DAC5"
+            android:paddingBottom="8dp" />
+
+        <EditText
+            android:id="@+id/etDescripcion"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.2"
+            android:background="@android:drawable/editbox_background_normal"
+            android:backgroundTint="#575757"
+            android:hint="Ingresa una descripción"
+            android:inputType="textMultiLine"
+            android:minLines="5"
+            android:padding="12dp"
+            android:textColor="#FFFFFF" />
+
+        <!-- Espacio -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="16dp" />
+
+        <!-- Campo Precio -->
+        <TextView
+            android:id="@+id/tvPrecio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Precio"
+            android:textSize="18sp"
+            android:textColor="#FF03DAC5"
+            android:paddingBottom="8dp" />
+
+        <EditText
+            android:id="@+id/etPrecio"
+            android:backgroundTint="#575757"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.2"
+            android:background="@android:drawable/editbox_background_normal"
+            android:hint="Ingresa el precio"
+            android:inputType="numberDecimal"
+            android:padding="12dp"
+            android:textColor="#FFFFFF" />
+
+        <!-- Espacio -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="16dp" />
+
+        <!-- Espacio -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="16dp" />
+
+        <Button
+            android:id="@+id/buttonSave"
+            android:layout_width="312dp"
+            android:layout_height="25dp"
+            android:layout_gravity="center"
+            android:layout_weight="0.1"
+            android:backgroundTint="#3f3f3f"
+            android:padding="16dp"
+            android:text="Guardar"
+            android:textColor="#FF03DAC5" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

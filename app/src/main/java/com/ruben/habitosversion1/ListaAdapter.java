@@ -79,6 +79,11 @@ public class ListaAdapter extends RecyclerView.Adapter<ListaAdapter.ListaViewHol
             txtPrecio = itemView.findViewById(R.id.txtPrecio);
         }
     }
+
+    public Lista getItem(int position) {
+        // Retornar el ítem en la posición especificada
+        return listaList.get(position);
+    }
 }
 
 

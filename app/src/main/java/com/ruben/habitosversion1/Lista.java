@@ -18,6 +18,7 @@ public class Lista {
         this.precio = precio;
     }
 
+
     public int getId() {
         return id;
     }

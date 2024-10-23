@@ -13,6 +13,7 @@ import android.view.View;
 import android.widget.Button;
 
 import androidx.activity.EdgeToEdge;
+import androidx.activity.result.ActivityResultLauncher;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
@@ -40,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,6 +53,8 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
+
+
         recyclerView = findViewById(R.id.recyclerViewHabitos);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
@@ -58,6 +62,16 @@ public class MainActivity extends AppCompatActivity {
 
         ItemTouchHelper itemTouchHelper = new ItemTouchHelper(new SwipeToDeleteCallback(listaAdapter));
         itemTouchHelper.attachToRecyclerView(recyclerView);
+
+        // Configura el SwipeToEditCallback
+        ItemTouchHelper swipeToEditCallback = new ItemTouchHelper(new SwipeToEditCallback(listaAdapter, this));
+        swipeToEditCallback.attachToRecyclerView(recyclerView);
+
+
+
+
+
+
 
         add_habito = findViewById(R.id.addHabito);
         add_habito.setOnClickListener(new View.OnClickListener() {
