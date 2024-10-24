@@ -7,60 +7,47 @@
     android:background="#121212"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/titleText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Lista de Tareas"
-        android:textColor="#FF03DAC5"
-        android:textSize="24sp"
-        app:layout_constraintTop_toTopOf="parent"
+    <include
+        android:id="@+id/xml_toolbar"
+        layout="@layout/toolbar"
+        app:layout_constraintBottom_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="16dp"
-        android:gravity="center" />
+        app:layout_constraintTop_toTopOf="parent">
 
-    <!-- Nuevo TextView para describir la lista de tareas -->
-    <TextView
-        android:id="@+id/listDescription"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Tus Tareas"
-        android:textColor="#FF03DAC5"
-        android:textSize="18sp"
-        app:layout_constraintTop_toBottomOf="@id/titleText"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="8dp"
-        android:gravity="center" />
+    </include>
+
+    <!--        android:layout_margin="16dp"-->
+    <!--        android:layout_marginBottom="8dp"-->
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewHabitos"
-        android:layout_width="338dp"
-        android:layout_height="498dp"
-        android:layout_margin="16dp"
-        android:background="#282828"
-        app:layout_constraintBottom_toTopOf="@id/addHabito"
+        android:layout_width="match_parent"
+        android:layout_height="524dp"
+        android:background="@drawable/myrect"
+        android:elevation="12dp"
+
+
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.454"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/listDescription"
-        app:layout_constraintVertical_bias="0.146"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.497"
         tools:listitem="@layout/list" />
 
     <Button
         android:id="@+id/addHabito"
-        android:layout_width="338dp"
-        android:layout_height="45dp"
+        android:layout_width="335dp"
+        android:layout_height="77dp"
         android:layout_marginBottom="16dp"
-        android:backgroundTint="#3f3f3f"
+        android:backgroundTint="#8C282828"
+        android:elevation="12dp"
         android:text="Añadir"
         android:textColor="#FF03DAC5"
         app:icon="@android:drawable/ic_input_add"
         app:iconTint="#FF03DAC5"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.465"
         app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

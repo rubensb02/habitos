@@ -19,23 +19,39 @@
 
         <!-- Título de la pantalla -->
 
-        <TextView
-            android:id="@+id/tvTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Añadir Hábito"
-            android:textColor="#FF03DAC5"
-            android:textSize="24sp"
-            android:gravity="center"
-            android:layout_marginBottom="16dp" />
+<!--        <TextView-->
+<!--            android:id="@+id/tvTitle"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Añadir Hábito"-->
+<!--            android:textColor="#FF03DAC5"-->
+<!--            android:textSize="24sp"-->
+<!--            android:gravity="center"-->
+<!--            android:layout_marginBottom="16dp" />-->
+
+        <include
+            android:id="@+id/xml_toolbar"
+            layout="@layout/toolbar_add"
+            app:layout_constraintBottom_toTopOf="parent"
+            app:layout_constraintEnd_toStartOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+        </include>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="16dp" />
 
         <!-- Campo Nombre -->
         <TextView
             android:id="@+id/tvNombre"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="35dp"
             android:text="Nombre"
-            android:textSize="18sp"
+            android:textSize="24sp"
+            android:layout_gravity="center"
+            android:gravity="center"
             android:textColor="#FF03DAC5"
             android:paddingBottom="8dp" />
 
@@ -60,9 +76,11 @@
         <TextView
             android:id="@+id/tvDescripcion"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="35dp"
             android:text="Descripción"
-            android:textSize="18sp"
+            android:textSize="24sp"
+            android:layout_gravity="center"
+            android:gravity="center"
             android:textColor="#FF03DAC5"
             android:paddingBottom="8dp" />
 
@@ -88,9 +106,11 @@
         <TextView
             android:id="@+id/tvPrecio"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="35dp"
             android:text="Precio"
-            android:textSize="18sp"
+            android:textSize="24sp"
+            android:layout_gravity="center"
+            android:gravity="center"
             android:textColor="#FF03DAC5"
             android:paddingBottom="8dp" />
 
@@ -113,7 +133,7 @@
 
         <TimePicker
             android:id="@+id/timePicker"
-            android:layout_width="378dp"
+            android:layout_width="match_parent"
             android:layout_height="88dp"
             android:theme="@style/CustomTimePickerTheme"
             android:textColorPrimary="#FF03DAC5"
@@ -140,8 +160,8 @@
 
         <Button
             android:id="@+id/buttonSave"
-            android:layout_width="312dp"
-            android:layout_height="25dp"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
             android:layout_gravity="center"
             android:layout_weight="0.1"
             android:backgroundTint="#3f3f3f"
