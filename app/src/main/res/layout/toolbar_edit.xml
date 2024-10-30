@@ -2,7 +2,7 @@
 <androidx.appcompat.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="100dp"
-    android:background="#8C282828"
+    android:background="?android:attr/colorAccent"
     android:elevation="8dp">
 
     <TextView
@@ -13,6 +13,6 @@
         android:gravity="center"
         android:layout_gravity="center"
         android:text="Editar tareas"
-        android:textColor="#FF03DAC5"
+        android:textColor="?android:attr/textColorPrimary"
         android:textSize="24sp" />
 </androidx.appcompat.widget.Toolbar>

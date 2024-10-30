@@ -5,17 +5,20 @@ import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Switch;
 
 import androidx.activity.EdgeToEdge;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.core.graphics.Insets;
@@ -39,9 +42,6 @@ public class MainActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private Button add_habito;
 
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,6 +53,33 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
+
+        SharedPreferences sharedPreferences = getSharedPreferences("AppPreferences", MODE_PRIVATE);
+        boolean isDarkMode = sharedPreferences.getBoolean("isDarkMode", false);
+        if (isDarkMode) {
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+        } else {
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+        }
+        setContentView(R.layout.activity_main);
+
+        // Configurar el Switch y su estado inicial
+        Switch themeSwitch = findViewById(R.id.switch_theme);
+        themeSwitch.setChecked(isDarkMode);
+
+        // Cambiar tema cuando el Switch es activado o desactivado
+        themeSwitch.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            if (isChecked) {
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+            } else {
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+            }
+
+            // Guardar la preferencia de tema
+            SharedPreferences.Editor editor = sharedPreferences.edit();
+            editor.putBoolean("isDarkMode", isChecked);
+            editor.apply();
+        });
 
 
         recyclerView = findViewById(R.id.recyclerViewHabitos);
@@ -67,12 +94,6 @@ public class MainActivity extends AppCompatActivity {
         ItemTouchHelper swipeToEditCallback = new ItemTouchHelper(new SwipeToEditCallback(listaAdapter, this));
         swipeToEditCallback.attachToRecyclerView(recyclerView);
 
-
-
-
-
-
-
         add_habito = findViewById(R.id.addHabito);
         add_habito.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -82,6 +103,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
     private void loadHabitos() {
         listaList = (ArrayList<Lista>) DatabaseClient.getInstance(getApplicationContext()).getHabitosDatabase().habitosDao().getAllLista();
         HabitosDao habitosDao = DatabaseClient.getInstance(getApplicationContext()).getHabitosDatabase().habitosDao();

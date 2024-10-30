@@ -1,174 +1,155 @@
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#121212"
-    tools:context=".AddHabito">
+    android:background="?android:attr/windowBackground"
+    tools:context=".AddHabito"
+    >
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
+    <include
+        android:id="@+id/xml_toolbar"
+        layout="@layout/toolbar_add"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/tvNombre"
+        android:layout_width="0dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:gravity="start"
+        android:paddingBottom="8dp"
+        android:text="Nombre"
+        android:textColor="?android:attr/textColorPrimary"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/xml_toolbar" />
+
+    <EditText
+        android:id="@+id/etNombre"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="8dp"
+        android:background="@android:drawable/editbox_background_normal"
+        android:backgroundTint="?android:attr/textColorSecondary"
+        android:hint="Ingresa el nombre"
+        android:inputType="textPersonName"
+        android:padding="12dp"
+        android:textColor="?android:attr/textColorPrimary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvNombre"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"/>
+
+    <TextView
+        android:id="@+id/tvDescripcion"
+        android:layout_width="0dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="8dp"
+        android:gravity="start"
+        android:paddingBottom="8dp"
+        android:text="Descripción"
+        android:textColor="?android:attr/textColorPrimary"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/etNombre"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"/>
+
+    <EditText
+        android:id="@+id/etDescripcion"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="12dp"
+        android:background="@android:drawable/editbox_background_normal"
+        android:backgroundTint="?android:attr/textColorSecondary"
+        android:hint="Ingresa una descripción"
+        android:inputType="textMultiLine"
+        android:minLines="5"
+        android:padding="12dp"
+        android:textColor="?android:attr/textColorPrimary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvDescripcion"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"/>
+
+    <TextView
+        android:id="@+id/tvPrecio"
+        android:layout_width="0dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="8dp"
+        android:gravity="start"
+        android:paddingBottom="8dp"
+        android:text="Precio"
+        android:textColor="?android:attr/textColorPrimary"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/etDescripcion"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"/>
+
+    <EditText
+        android:id="@+id/etPrecio"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="8dp"
+        android:background="@android:drawable/editbox_background_normal"
+        android:backgroundTint="?android:attr/textColorSecondary"
+        android:hint="Ingresa el precio"
+        android:inputType="numberDecimal"
+        android:padding="12dp"
+        android:textColor="?android:attr/textColorPrimary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvPrecio"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"/>
+
+    <TimePicker
+        android:id="@+id/timePicker"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:theme="?android:attr/timePickerStyle"
+        android:timePickerMode="spinner"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/etPrecio"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"/>
+
+    <Button
+        android:id="@+id/buttonSave"
+        android:layout_width="260dp"
+        android:layout_height="70dp"
+        android:backgroundTint="?android:attr/colorAccent"
         android:padding="16dp"
-        android:gravity="center_horizontal"
-        android:background="#121212"
-        android:layout_gravity="center"
-        android:weightSum="1">
-
-        <!-- Título de la pantalla -->
-
-<!--        <TextView-->
-<!--            android:id="@+id/tvTitle"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:text="Añadir Hábito"-->
-<!--            android:textColor="#FF03DAC5"-->
-<!--            android:textSize="24sp"-->
-<!--            android:gravity="center"-->
-<!--            android:layout_marginBottom="16dp" />-->
-
-        <include
-            android:id="@+id/xml_toolbar"
-            layout="@layout/toolbar_add"
-            app:layout_constraintBottom_toTopOf="parent"
-            app:layout_constraintEnd_toStartOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-        </include>
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="16dp" />
-
-        <!-- Campo Nombre -->
-        <TextView
-            android:id="@+id/tvNombre"
-            android:layout_width="match_parent"
-            android:layout_height="35dp"
-            android:text="Nombre"
-            android:textSize="24sp"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:textColor="#FF03DAC5"
-            android:paddingBottom="8dp" />
-
-        <EditText
-            android:id="@+id/etNombre"
-            android:backgroundTint="#575757"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="0.2"
-            android:background="@android:drawable/editbox_background_normal"
-            android:hint="Ingresa el nombre"
-            android:inputType="textPersonName"
-            android:padding="12dp"
-            android:textColor="#FFFFFF" />
-
-        <!-- Espacio -->
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="16dp" />
-
-        <!-- Campo Descripción -->
-        <TextView
-            android:id="@+id/tvDescripcion"
-            android:layout_width="match_parent"
-            android:layout_height="35dp"
-            android:text="Descripción"
-            android:textSize="24sp"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:textColor="#FF03DAC5"
-            android:paddingBottom="8dp" />
-
-        <EditText
-            android:id="@+id/etDescripcion"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="0.2"
-            android:background="@android:drawable/editbox_background_normal"
-            android:backgroundTint="#575757"
-            android:hint="Ingresa una descripción"
-            android:inputType="textMultiLine"
-            android:minLines="5"
-            android:padding="12dp"
-            android:textColor="#FFFFFF" />
-
-        <!-- Espacio -->
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="16dp" />
-
-        <!-- Campo Precio -->
-        <TextView
-            android:id="@+id/tvPrecio"
-            android:layout_width="match_parent"
-            android:layout_height="35dp"
-            android:text="Precio"
-            android:textSize="24sp"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:textColor="#FF03DAC5"
-            android:paddingBottom="8dp" />
-
-        <EditText
-            android:id="@+id/etPrecio"
-            android:backgroundTint="#575757"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="0.2"
-            android:background="@android:drawable/editbox_background_normal"
-            android:hint="Ingresa el precio"
-            android:inputType="numberDecimal"
-            android:padding="12dp"
-            android:textColor="#FFFFFF" />
-
-        <!-- Espacio -->
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="16dp" />
-
-        <TimePicker
-            android:id="@+id/timePicker"
-            android:layout_width="match_parent"
-            android:layout_height="88dp"
-            android:theme="@style/CustomTimePickerTheme"
-            android:textColorPrimary="#FF03DAC5"
-            android:timePickerMode="spinner" />
-
-        <!-- Espacio -->
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="16dp" />
-
-
-<!--        <Button-->
-<!--            android:id="@+id/create_notification_button"-->
-<!--            android:layout_width="312dp"-->
-<!--            android:layout_height="25dp"-->
-<!--            android:layout_gravity="center"-->
-<!--            android:layout_weight="0.1"-->
-<!--            android:backgroundTint="#3f3f3f"-->
-<!--            android:padding="16dp"-->
-<!--            android:text="Crear notificación"-->
-<!--            android:textColor="#FF03DAC5"-->
-<!--            app:icon="@android:drawable/ic_input_add"-->
-<!--            app:iconTint="#FF03DAC5" />-->
-
-        <Button
-            android:id="@+id/buttonSave"
-            android:layout_width="match_parent"
-            android:layout_height="45dp"
-            android:layout_gravity="center"
-            android:layout_weight="0.1"
-            android:backgroundTint="#3f3f3f"
-            android:padding="16dp"
-            android:text="Enviar"
-            android:textColor="#FF03DAC5" />
-
-    </LinearLayout>
+        android:text="Enviar"
+        android:textColor="?android:attr/textColorPrimary"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/timePicker"
+        app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+

@@ -20,7 +20,7 @@
             android:text="Nombre"
             android:textSize="18sp"
             android:textStyle="bold"
-            android:textColor="#FF03DAC5"/>
+            android:textColor="?android:attr/textColorPrimary"/>
 
         <TextView
             android:id="@+id/txtDescripcion"
@@ -28,7 +28,7 @@
             android:layout_height="wrap_content"
             android:text="Descripcion"
             android:textSize="16sp"
-            android:textColor="#8b8b8b"/>
+            android:textColor="?android:attr/textColorSecondary"/>
 
         <TextView
             android:id="@+id/txtPrecio"
@@ -36,7 +36,7 @@
             android:layout_height="wrap_content"
             android:text="precio"
             android:textSize="16sp"
-            android:textColor="#8b8b8b"/>
+            android:textColor="?android:attr/textColorSecondary"/>
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

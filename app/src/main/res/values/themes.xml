@@ -1,9 +1,22 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
     <style name="Base.Theme.HabitosVersion1" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <!-- Colores y estilos para el tema claro -->
+        <item name="colorPrimary">#3F729B</item>
+        <item name="colorAccent">#3F729B</item>
+        <item name="android:textColorPrimary">#e96922</item>
+        <item name="android:textColorSecondary">#B1B1B1</item>
+        <item name="android:windowBackground">#E0E0E0</item>
+
+        <item name="android:timePickerStyle">@style/CustomTimePicker</item>
     </style>
 
-    <style name="Theme.HabitosVersion1" parent="Base.Theme.HabitosVersion1" />
+    <style name="CustomTimePicker">
+        <!-- Colores para el tema claro -->
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/textColorPrimary</item>
+        <item name="android:backgroundTint">@color/windowBackground</item>
+        <!-- Otros atributos específicos -->
+    </style>
+
 </resources>

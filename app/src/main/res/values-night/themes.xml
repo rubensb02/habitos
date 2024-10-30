@@ -1,7 +1,20 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
     <style name="Base.Theme.HabitosVersion1" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your dark theme here. -->
-        <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
+        <!-- Colores y estilos para el tema oscuro -->
+        <item name="colorPrimary">#282828</item>
+        <item name="colorAccent">#282828</item>
+        <item name="android:textColorPrimary">#03dac5</item>
+        <item name="android:textColorSecondary">#8b8b8b</item>
+        <item name="android:windowBackground">#121212</item>
+
+        <item name="android:timePickerStyle">@style/CustomTimePickerDark</item>
+    </style>
+    <style name="CustomTimePickerDark">
+        <!-- Colores para el tema oscuro -->
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/textColorPrimaryDark</item>
+        <item name="android:backgroundTint">@color/textColorSecondaryDark</item>
+        <!-- Otros atributos específicos -->
     </style>
 </resources>

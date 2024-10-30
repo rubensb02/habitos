@@ -2,6 +2,22 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <!-- Colores y estilos para el tema oscuro -->
+    <color name="colorPrimaryDark">#282828</color>
+    <color name="colorAccentDark">#282828</color>
+    <color name="textColorPrimaryDark">#03dac5</color>
+    <color name="textColorSecondaryDark">#8b8b8b</color>
+    <color name="windowBackgroundDark">#121212</color>
+    <color name="colorOnBackgroundDark">#121212</color>
+
+    <!-- Colores y estilos para el tema claro -->
+    <color name="colorPrimary">#3F729B</color>
+    <color name="colorAccent">#3F729B</color>
+    <color name="textColorPrimary">#e96922</color>
+    <color name="textColorSecondary">#8b8b8b</color>
+    <color name="windowBackground">#E0E0E0</color>
+    <color name="colorOnBackground">#E0E0E0</color>
 </resources>
 
 
